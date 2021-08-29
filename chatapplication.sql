@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 28, 2021 at 12:10 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Host: 127.0.0.1
+-- Generation Time: Aug 29, 2021 at 02:51 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -43,12 +42,13 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `groupid`, `group_name`, `creator`, `members`, `avatar`, `creationdate`) VALUES
-(1, '14804023901628159785610bbf29be080', 'Chess Virtuoso', '2051224492162685558060f7d89cbcb6f', 4, '15.svg', '2021-08-05 12:36:25'),
+(1, '14804023901628159785610bbf29be080', 'Blue_FamilyGroup', '2051224492162685558060f7d89cbcb6f', 4, '15.svg', '2021-08-05 12:36:25'),
 (2, '5998036171628159910610bbfa6e92eb', 'ComputerScience', '2051224492162685558060f7d89cbcb6f', 9, '11.svg', '2021-08-05 12:38:30'),
-(3, '17011685781628159941610bbfc539b67', 'Music Geek', '2051224492162685558060f7d89cbcb6f', 5, '16.svg', '2021-08-05 12:39:01'),
-(4, '211205068316284990596110ec73b98fb', 'Black_SHoe', '139299587116284978316110e7a7aff23', 6, '17.svg', '2021-08-09 10:50:59'),
-(5, '4161656101629192298611b806ab4119', 'sd', '2051224492162685558060f7d89cbcb6f', 3, '1.svg', '2021-08-17 11:24:58'),
-(6, '1797935323162995595361272771ccb8f', 'Kigali Chess', '2051224492162685558060f7d89cbcb6f', 5, 'pawner.svg', '2021-08-26 07:32:33');
+(3, '17011685781628159941610bbfc539b67', 'Amis De Jeunes', '2051224492162685558060f7d89cbcb6f', 5, '16.svg', '2021-08-05 12:39:01'),
+(4, '211205068316284990596110ec73b98fb', 'Christ The King Choir', '139299587116284978316110e7a7aff23', 6, '17.svg', '2021-08-09 10:50:59'),
+(5, '4161656101629192298611b806ab4119', 'Group2_humancenterd', '2051224492162685558060f7d89cbcb6f', 3, '1.svg', '2021-08-17 11:24:58'),
+(6, '1797935323162995595361272771ccb8f', 'Semper Virgos', '2051224492162685558060f7d89cbcb6f', 5, 'pawner.svg', '2021-08-26 07:32:33'),
+(7, '15194326441630178181612a8b85d4261', 'Mathematicsgroup', '4230515171630177613612a894da210e', 5, '17.svg', '2021-08-28 21:16:21');
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,31 @@ INSERT INTO `group_members` (`id`, `groupid`, `unique_id`) VALUES
 (30, '1797935323162995595361272771ccb8f', 'madiba'),
 (31, '1797935323162995595361272771ccb8f', 'james'),
 (32, '1797935323162995595361272771ccb8f', 'carle'),
-(33, '1797935323162995595361272771ccb8f', 'danielerat');
+(33, '1797935323162995595361272771ccb8f', 'danielerat'),
+(34, '15194326441630178181612a8b85d4261', 'angella'),
+(35, '15194326441630178181612a8b85d4261', 'madiba'),
+(36, '15194326441630178181612a8b85d4261', 'james'),
+(37, '15194326441630178181612a8b85d4261', 'carle'),
+(38, '15194326441630178181612a8b85d4261', 'blaise'),
+(39, '2747216231630178182612a8b8623f4c', 'angella'),
+(40, '2747216231630178182612a8b8623f4c', 'madiba'),
+(41, '2747216231630178182612a8b8623f4c', 'james'),
+(42, '2747216231630178182612a8b8623f4c', 'carle'),
+(43, '2747216231630178182612a8b8623f4c', 'blaise'),
+(44, '14259444781630231905612b5d61e806b', 'angella'),
+(45, '14259444781630231905612b5d61e806b', 'madiba'),
+(46, '14259444781630231905612b5d61e806b', 'james'),
+(47, '14259444781630231905612b5d61e806b', 'carle'),
+(48, '14259444781630231905612b5d61e806b', 'evariste'),
+(49, '14259444781630231905612b5d61e806b', 'Nicky'),
+(50, '14259444781630231905612b5d61e806b', 'kevine'),
+(51, '12433457591630231906612b5d621dab2', 'angella'),
+(52, '12433457591630231906612b5d621dab2', 'madiba'),
+(53, '12433457591630231906612b5d621dab2', 'james'),
+(54, '12433457591630231906612b5d621dab2', 'carle'),
+(55, '12433457591630231906612b5d621dab2', 'evariste'),
+(56, '12433457591630231906612b5d621dab2', 'Nicky'),
+(57, '12433457591630231906612b5d621dab2', 'kevine');
 
 -- --------------------------------------------------------
 
@@ -121,13 +145,10 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`msg_id`, `sent_by`, `sent_to`, `msg`, `delivered`, `text_time`) VALUES
-(1, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'How Was it in the 19s When it comes to shopping ?.', 'true', '2021-07-21 09:26:20'),
-(3, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'Well, When I was your age, I used to go to the market with two Hundred and bring home soap, rice, milk, bread, face powder etc. ', 'true', '2021-07-21 09:27:16'),
-(4, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'Nowadays it is difficult. There are CCTV cameras everywhere.', 'true', '2021-07-21 09:27:33'),
+(1, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'We modify message tobe this text', 'true', '2021-07-21 09:26:20'),
 (5, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'OMG , are you actually seious ! , this is the funniest thing Ever !', 'true', '2021-07-25 08:39:02'),
 (6, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'Hey Grand Pa , are you there?', 'true', '2021-07-26 05:01:28'),
 (7, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'Hello ?, Are You dead ? It\'s been a while that i haven\'t heard of your news ', 'true', '2021-07-26 05:29:22'),
-(8, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'What !you son of a cabbage farmer ! i am not dead of course.', 'true', '2021-07-26 06:09:38'),
 (9, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'danielerat', 'true', '2021-07-27 21:45:04'),
 (10, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'how are you doing?\r\n', 'true', '2021-07-27 21:45:14'),
 (11, '2051224492162685558060f7d89cbcb6f', '1343114919162685591560f7d9eb731d5', 'Hello nicolas how are you doing ?', 'true', '2021-07-27 21:48:56'),
@@ -143,9 +164,8 @@ INSERT INTO `messages` (`msg_id`, `sent_by`, `sent_to`, `msg`, `delivered`, `tex
 (22, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'holly shit', 'true', '2021-07-28 07:25:48'),
 (23, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'what is going on ', 'true', '2021-07-28 07:25:57'),
 (24, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'hello world', 'true', '2021-07-28 07:26:44'),
-(25, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'what is happening', 'true', '2021-07-28 07:27:29'),
+(25, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'We will go', 'true', '2021-07-28 07:27:29'),
 (26, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'yes', 'true', '2021-07-28 07:27:42'),
-(27, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'what', 'true', '2021-07-28 07:28:32'),
 (28, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'telephone', 'true', '2021-07-28 07:28:55'),
 (29, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'may the peace of the', 'true', '2021-07-28 07:36:21'),
 (30, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'may the peace', 'true', '2021-07-28 07:36:34'),
@@ -158,12 +178,8 @@ INSERT INTO `messages` (`msg_id`, `sent_by`, `sent_to`, `msg`, `delivered`, `tex
 (37, '1343114919162685591560f7d9eb731d5', '2051224492162685558060f7d89cbcb6f', 'how are you doing ?', 'true', '2021-07-28 08:22:04'),
 (38, '2051224492162685558060f7d89cbcb6f', '1343114919162685591560f7d9eb731d5', 'what do you want man , i am broke man , please \r\n', 'true', '2021-07-28 08:22:16'),
 (39, '1343114919162685591560f7d9eb731d5', '2051224492162685558060f7d89cbcb6f', 'no i do not want you money please ', 'true', '2021-07-28 08:22:40'),
-(40, '867310657162714709660fc4b58c78bc', '2051224492162685558060f7d89cbcb6f', 'hello', 'true', '2021-07-29 20:59:37'),
-(41, '867310657162714709660fc4b58c78bc', '2051224492162685558060f7d89cbcb6f', 'how are you doing?', 'true', '2021-07-29 20:59:42'),
 (42, '2051224492162685558060f7d89cbcb6f', '867310657162714709660fc4b58c78bc', 'great', 'true', '2021-07-29 21:00:04'),
-(43, '867310657162714709660fc4b58c78bc', '2051224492162685558060f7d89cbcb6f', 'so', 'true', '2021-07-29 21:00:11'),
 (44, '2051224492162685558060f7d89cbcb6f', '867310657162714709660fc4b58c78bc', 'so what', 'true', '2021-07-29 21:00:15'),
-(45, '867310657162714709660fc4b58c78bc', '2051224492162685558060f7d89cbcb6f', 'what are you even talking about man?', 'true', '2021-07-29 21:00:28'),
 (46, '2051224492162685558060f7d89cbcb6f', '867310657162714709660fc4b58c78bc', 'what', 'true', '2021-07-29 21:00:35'),
 (47, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'hello there', 'true', '2021-08-02 18:35:42'),
 (48, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'what happened\r\n', 'true', '2021-08-04 22:48:45'),
@@ -174,65 +190,30 @@ INSERT INTO `messages` (`msg_id`, `sent_by`, `sent_to`, `msg`, `delivered`, `tex
 (53, '2051224492162685558060f7d89cbcb6f', '1056106161162791739061080c4ed29da', 'hello please how are you', 'true', '2021-08-05 00:02:16'),
 (54, '2051224492162685558060f7d89cbcb6f', '605595234162791769961080d83e3ba2', 'this is the greek geek groupp', 'true', '2021-08-05 00:02:31'),
 (55, '2051224492162685558060f7d89cbcb6f', '1056106161162791739061080c4ed29da', 'really , i don\'t think i am on the right place man', 'true', '2021-08-05 05:39:03'),
-(56, '1124238672162685569160f7d90bc1c47', '1056106161162791739061080c4ed29da', 'daniel , are you drunk again ?', 'true', '2021-08-05 05:42:08'),
-(57, '1124238672162685569160f7d90bc1c47', '1056106161162791739061080c4ed29da', 'what are you trying to talk about ?', 'true', '2021-08-05 05:42:39'),
 (58, '2051224492162685558060f7d89cbcb6f', '1056106161162791739061080c4ed29da', 'hahha , never mind\r\n', 'true', '2021-08-05 05:42:50'),
 (59, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'hello \r\n', 'true', '2021-08-05 09:07:01'),
-(60, '1124238672162685569160f7d90bc1c47', '17011685781628159941610bbfc539b67', '<b>Fade To Black -Metallica </b>\r\nLife, it seems, will fade away\r\nDrifting further, every day\r\nGetting lost within myself\r\nNothing matters, no one else\r\nI have lost the will to live\r\nSimply nothing more to give\r\nThere is nothing more for me\r\nNeed the end to set me free\r\nThings not what they used to be\r\nMissing one inside of me\r\nDeathly loss, this can\'t be real\r\nI cannot stand this hell I feel\r\nEmptiness is filling me\r\nTo the point of agony\r\nGrowing darkness, taking dawn\r\nI was me, but now he\'s gone\r\nNo one but me\r\nCan save myself\r\nBut it\'s too late\r\nNow I can\'t think\r\nThink why I should even try', 'true', '2021-08-05 10:42:27'),
 (61, '2051224492162685558060f7d89cbcb6f', '17011685781628159941610bbfc539b67', 'Damn , So great , How About This one , \r\n\r\n', 'true', '2021-08-05 10:53:53'),
 (62, '2051224492162685558060f7d89cbcb6f', '17011685781628159941610bbfc539b67', '<b>Sam Smith - Pray </b>\r\nI\'m young and I\'m foolish, I\'ve made bad decisions\r\nI block out the news, turn my back on religion\r\nDon\'t have no degree, I\'m somewhat naïve\r\nI\'ve made it this far on my own\r\nBut lately, that shit ain\'t been gettin\' me higher\r\nI lift up my head and the world is on fire\r\nThere\'s dread in my heart and fear in my bones\r\nAnd I just don\'t know what to say\r\nMaybe I\'ll pray, pray\r\nMaybe I\'ll pray\r\nI have never believed in you, no\r\nBut I\'m gonna pray\r\nYou won\'t find me in church (no) reading the Bible (no)\r\nI am still here and I\'m still your disciple\r\nI\'m down on my knees, I\'m beggin\' you, please\r\nI\'m broken, alone, and afraid\r\nI\'m not a saint, I\'m more of a sinner\r\nI don\'t wanna lose, but I fear for the winners\r\nWhen I tried to explain, the words ran away\r\nThat\'s why I am stood here today\r\nAnd I\'m gonna pray (Lord)\r\nPray (Lord), maybe I\'ll pray\r\nPray for a glimmer of hope\r\nMaybe I\'ll pray (Lord), pray (Lord), maybe I\'ll pray\r\nI\'ve never believed in you, no, but I\'m gonna\r\n', 'true', '2021-08-05 10:53:57'),
-(63, '1447413916162762730461039f28998a5', '17011685781628159941610bbfc539b67', 'Damn, I think i like more the second one ! \r\n', 'true', '2021-08-05 10:58:49'),
 (64, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'hi', 'true', '2021-08-05 11:48:33'),
-(65, '867310657162714709660fc4b58c78bc', '1343114919162685591560f7d9eb731d5', 'hey nigga\r\n', 'true', '2021-08-06 15:49:23'),
-(66, '867310657162714709660fc4b58c78bc', '1124238672162685569160f7d90bc1c47', 'evariste stop your jokes man', 'true', '2021-08-06 15:49:50'),
-(67, '867310657162714709660fc4b58c78bc', '285161929162714797160fc4ec336e24', 'Man, you really Look Like Freddie mercury, like so bad ! \r\n', 'true', '2021-08-06 15:52:21'),
 (68, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'Hello James \r\nhow are you doing ? ', 'true', '2021-08-07 16:31:05'),
 (69, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'hello there', 'true', '2021-08-07 16:33:35'),
 (70, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'bla bla la', 'true', '2021-08-07 16:38:38'),
 (71, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'we\r\n', 'true', '2021-08-07 16:57:19'),
 (72, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'bite sha , umezute ? ', 'true', '2021-08-07 16:57:25'),
-(73, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'ndabizi c ?', 'true', '2021-08-07 16:57:33'),
-(74, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'hahahhha\r\ntoka', 'true', '2021-08-07 16:57:40'),
 (75, '2051224492162685558060f7d89cbcb6f', '17011685781628159941610bbfc539b67', 'testing\r\n', 'true', '2021-08-09 07:51:41'),
-(76, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'hello', 'true', '2021-08-09 08:20:02'),
-(77, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'how are you doing today', 'true', '2021-08-09 08:20:10'),
-(79, '1124238672162685569160f7d90bc1c47', '14804023901628159785610bbf29be080', 'hello\r\n', 'true', '2021-08-09 08:21:55'),
-(80, '1124238672162685569160f7d90bc1c47', '5998036171628159910610bbfa6e92eb', 'is this computer', 'true', '2021-08-09 08:22:06'),
 (81, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'bite sha', 'true', '2021-08-09 08:23:28'),
 (82, '2051224492162685558060f7d89cbcb6f', '139299587116284978316110e7a7aff23', 'mumbere', 'true', '2021-08-09 08:31:37'),
-(83, '139299587116284978316110e7a7aff23', '2051224492162685558060f7d89cbcb6f', 'musa bite', 'true', '2021-08-09 08:35:44'),
-(85, '139299587116284978316110e7a7aff23', '1124238672162685569160f7d90bc1c47', 'daniel , ambgiye bite,', 'true', '2021-08-09 08:40:59'),
 (86, '2051224492162685558060f7d89cbcb6f', '211205068316284990596110ec73b98fb', 'ziriya ngweto zirihe ra ?', 'true', '2021-08-09 08:51:26'),
-(87, '139299587116284978316110e7a7aff23', '2051224492162685558060f7d89cbcb6f', 'yo man ', 'true', '2021-08-09 13:52:18'),
-(88, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'musa , hey', 'true', '2021-08-09 13:52:52'),
-(89, '1124238672162685569160f7d90bc1c47', '1343114919162685591560f7d9eb731d5', 'hey , first tiext', 'true', '2021-08-09 13:53:51'),
 (90, '2051224492162685558060f7d89cbcb6f', '139299587116284978316110e7a7aff23', 'nobody knows', 'true', '2021-08-09 13:57:58'),
 (91, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'last message for sure', 'true', '2021-08-09 14:05:22'),
 (92, '2051224492162685558060f7d89cbcb6f', '1343114919162685591560f7d9eb731d5', 'very last of them all', 'true', '2021-08-09 14:19:47'),
-(93, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'this is the last noneho', 'true', '2021-08-09 14:21:24'),
-(94, '1124238672162685569160f7d90bc1c47', '139299587116284978316110e7a7aff23', 'who are you man ', 'true', '2021-08-09 14:21:38'),
 (95, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'who are we', 'true', '2021-08-09 14:23:32'),
-(96, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'we are who we want to be', 'true', '2021-08-09 14:23:45'),
-(97, '1124238672162685569160f7d90bc1c47', '1447413916162762730461039f28998a5', 'daniel said who are we !', 'true', '2021-08-09 14:24:02'),
 (98, '2051224492162685558060f7d89cbcb6f', '1815812960162685631160f7db77691d5', 'Hello Carlos , how are you doing?', 'true', '2021-08-10 13:11:26'),
 (99, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'hey you', 'true', '2021-08-10 13:15:41'),
-(100, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'how are you doing ?', 'true', '2021-08-10 13:15:52'),
-(101, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'i am fine how abour you ', 'true', '2021-08-10 13:16:20'),
-(102, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'i am cool too', 'true', '2021-08-10 13:16:25'),
 (103, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'alright , happy that you are fine', 'true', '2021-08-10 13:16:37'),
 (104, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'paprica', 'true', '2021-08-10 13:26:34'),
-(105, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'papa where are you', 'true', '2021-08-10 13:30:30'),
-(106, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'hello there', 'true', '2021-08-10 13:36:01'),
 (107, '2051224492162685558060f7d89cbcb6f', '1447413916162762730461039f28998a5', 'so you are here with me ?', 'true', '2021-08-10 13:36:26'),
-(109, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'or you are not', 'true', '2021-08-10 13:36:54'),
-(110, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'adfsadf', 'true', '2021-08-10 13:36:59'),
-(111, '1447413916162762730461039f28998a5', '2051224492162685558060f7d89cbcb6f', 'i think you slept', 'true', '2021-08-10 13:37:10'),
-(112, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'hey you\r\n', 'true', '2021-08-10 16:52:29'),
-(113, '1124238672162685569160f7d90bc1c47', '867310657162714709660fc4b58c78bc', 'hey carlos', 'false', '2021-08-10 16:53:29'),
-(114, '867310657162714709660fc4b58c78bc', '2051224492162685558060f7d89cbcb6f', 'this is just a test you know ', 'true', '2021-08-10 16:54:24'),
 (115, '2051224492162685558060f7d89cbcb6f', '867310657162714709660fc4b58c78bc', 'i know that it is just  atest bro\r\n', 'false', '2021-08-10 16:55:05'),
-(116, '1124238672162685569160f7d90bc1c47', '867310657162714709660fc4b58c78bc', 'badge for messages', 'false', '2021-08-10 16:55:46'),
-(117, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'badge for messages\r\n', 'true', '2021-08-10 16:56:34'),
 (118, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'bite man ', 'true', '2021-08-11 12:05:36'),
 (121, '2051224492162685558060f7d89cbcb6f', '17011685781628159941610bbfc539b67', 'fasdfdff\r\ndfa\r\ndf', 'false', '2021-08-12 11:38:42'),
 (122, '2051224492162685558060f7d89cbcb6f', '17011685781628159941610bbfc539b67', 'hello\r\n', 'false', '2021-08-12 12:24:07'),
@@ -249,21 +230,14 @@ INSERT INTO `messages` (`msg_id`, `sent_by`, `sent_to`, `msg`, `delivered`, `tex
 (133, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'heello', 'true', '2021-08-25 14:58:43'),
 (134, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'fdfadfd', 'true', '2021-08-25 15:22:21'),
 (135, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'hefewfe', 'true', '2021-08-25 15:22:26'),
-(136, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'bite', 'true', '2021-08-25 15:22:33'),
 (137, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'hello', 'true', '2021-08-25 19:24:24'),
 (138, '2051224492162685558060f7d89cbcb6f', '1124238672162685569160f7d90bc1c47', 'how are you doing', 'true', '2021-08-25 19:24:34'),
-(139, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'hey', 'true', '2021-08-25 19:44:24'),
-(140, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'bonjourno', 'true', '2021-08-25 19:45:55'),
-(141, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'paris', 'true', '2021-08-25 19:46:11'),
-(142, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'pris', 'true', '2021-08-25 19:46:33'),
-(143, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'without', 'true', '2021-08-25 19:46:37'),
-(144, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'me', 'true', '2021-08-25 19:46:40'),
-(145, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'petir', 'true', '2021-08-25 19:47:45'),
-(146, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'nite', 'true', '2021-08-25 19:47:52'),
-(147, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'uko', 'true', '2021-08-25 19:47:58'),
-(148, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'bonjour', 'true', '2021-08-25 19:48:34'),
-(149, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'hello there', 'true', '2021-08-25 19:53:33'),
-(155, '1124238672162685569160f7d90bc1c47', '2051224492162685558060f7d89cbcb6f', 'Fade To Black -Metallica Life, it seems, will fade away Drifting further, every day Getting lost within myself Nothing matters, no one else I have lost the will to live Simply nothing more to give There is nothing more for me Need the end to set me free Things not what they used to be Missing one inside of me Deathly loss, this can\'t be real I cannot stand this hell I feel Emptiness is filling me To the point of agony Growing darkness, taking dawn I was me, but now he\'s gone No one but me Can save myself But it\'s too late Now I can\'t think Think why I should even try', 'true', '2021-08-25 22:10:25');
+(164, '4230515171630177613612a894da210e', '7278477361630177901612a8a6dcf58c', 'Hello Habineza', 'true', '2021-08-28 19:14:28'),
+(165, '7278477361630177901612a8a6dcf58c', '4230515171630177613612a894da210e', 'Hello Blaise\r\n', 'true', '2021-08-28 19:15:08'),
+(166, '4230515171630177613612a894da210e', '15194326441630178181612a8b85d4261', 'hello', 'false', '2021-08-28 19:17:03'),
+(167, '4230515171630177613612a894da210e', '6990266951630231486612b5bbeef064', 'Hello Kevine\r\n', 'true', '2021-08-29 10:08:19'),
+(168, '6990266951630231486612b5bbeef064', '4230515171630177613612a894da210e', 'Hello blaise', 'true', '2021-08-29 10:09:31'),
+(169, '4230515171630177613612a894da210e', '2747216231630178182612a8b8623f4c', 'Hello members', 'false', '2021-08-29 10:10:00');
 
 -- --------------------------------------------------------
 
@@ -295,7 +269,10 @@ INSERT INTO `online_status` (`id`, `user_id`, `last_login`, `online_status`) VAL
 (11, '139299587116284978316110e7a7aff23', '09 August 2021 15:52:24', 'false'),
 (12, '36278080162995690561272b299fa35', '000000', 'false'),
 (13, '1068532639162995702861272ba41b7c5', '000000', 'false'),
-(14, '1098700369162995731661272cc4e05fa', '000000', 'false');
+(14, '1098700369162995731661272cc4e05fa', '000000', 'false'),
+(15, '4230515171630177613612a894da210e', '29 August 2021 14:17:57', 'true'),
+(16, '7278477361630177901612a8a6dcf58c', '28 August 2021 21:12:00', 'true'),
+(17, '6990266951630231486612b5bbeef064', '29 August 2021 14:06:50', 'false');
 
 -- --------------------------------------------------------
 
@@ -347,16 +324,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `unique_id`, `first_name`, `last_name`, `username`, `email`, `hashed_password`, `avatar`) VALUES
-(1, '2051224492162685558060f7d89cbcb6f', 'Daniel', 'Gisa Ilunga', 'danielerat', 'danielerat45@gmail.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '9.svg'),
-(2, '1124238672162685569160f7d90bc1c47', 'Evariste', 'Twisenge', 'evariste', 'evaristetheman@gmail.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '12.svg'),
+(1, '2051224492162685558060f7d89cbcb6f', 'Anicet', 'Habimana', 'habimana', 'habimana45@gmail.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '9.svg'),
 (3, '1343114919162685591560f7d9eb731d5', 'Ange', 'Uberewe', 'angella', 'nicolasi@nicolas.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '13.svg'),
-(4, '190952265162685602860f7da5c174c3', 'Nicole', 'Bigir', 'Nicky', 'Nikcy@nick.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '2.svg'),
-(5, '1815812960162685631160f7db77691d5', 'Mumberto', 'Carlos', 'Mumberto!1', 'dadada@dada.dada', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '6.svg'),
-(6, '867310657162714709660fc4b58c78bc', 'Mumberto', 'Carlos', 'carle', 'carle1@gmail.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '1.svg'),
-(7, '586509744162714762660fc4d6ad05fc', 'chess', 'Guru', 'jonathan', 'chess@guru.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '8.svg'),
-(8, '285161929162714797160fc4ec336e24', 'olsun', 'Mining', 'olsunmining', 'olsunmining@olsun.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '1.svg'),
-(9, '1447413916162762730461039f28998a5', 'james', 'Blunt', 'james', 'jamesblunt@blunt.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '14.svg'),
-(10, '139299587116284978316110e7a7aff23', 'safi', 'MADIBA', 'madiba', 'safi@safi.com', '$2y$10$lz5ECgxqQUDbbVT0bh0Iz.9s/dVgM7dhr4woQ/5Hoa70kp794R8eW', '4.svg');
+(34, '4230515171630177613612a894da210e', 'Blaise', 'NINDENKIMANA', 'blaise', 'bnindenkimana2@gmail.com', '$2y$10$wbFqrS2aHJvJhrbsHEiLKOoi/5FCMrLXWfb/9YbAxQWdBM09oobka', '612a894d69e87-1630177613.png'),
+(35, '7278477361630177901612a8a6dcf58c', 'Habineza', 'Celestin', 'habineza', 'flora@gmail.com', '$2y$10$nFR80NfGpRDod9tOjuiNwuiFtqyEhZoWAkZvzoDlqmKcX2AWSYp5S', '612a8a6dce987-1630177901.png'),
+(36, '6990266951630231486612b5bbeef064', 'IRADUKUNDA', 'Kevine', 'kevine', 'kevine@gmail.com', '$2y$10$s/JCKYVlibldv2BLRQVk2.zYo8yK6hPCqO3kh97s5CVhi3ZZ47y7a', '612b5bbeee9c2-1630231486.png');
 
 --
 -- Indexes for dumped tables
@@ -408,25 +380,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `group_members`
 --
 ALTER TABLE `group_members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 
 --
 -- AUTO_INCREMENT for table `online_status`
 --
 ALTER TABLE `online_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `themes`
@@ -438,7 +410,7 @@ ALTER TABLE `themes`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables
