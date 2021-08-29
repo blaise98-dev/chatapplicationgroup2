@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost/chatapplicationgroup2/api.php?api_name=get_user&username=--all",
+					"raw": "http://localhost/chatapplicationgroup2/api.php?api_name=get_user&username=*",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -40,7 +40,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost/chatapplicationgroup2/api.php?api_name=get_group&id=--all",
+					"raw": "http://localhost/chatapplicationgroup2/api.php?api_name=get_group&id=*",
 					"protocol": "http",
 					"host": [
 						"localhost"
