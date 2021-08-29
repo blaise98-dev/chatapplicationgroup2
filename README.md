@@ -6,19 +6,19 @@ This phpChatApp Has an API which was built from the ground-up with a JSON API th
 ## Use Cases
 
 There are many reasons to use an API. 
-Down Here , there are quire Few things You Might Want to do with The API:
+Down Here , there are required Few things You Might Want to do with The API:
 
 ```http
-GET :: USER BY USERNAME : chatPrototype/API.php?api_name=get_user&username=username
+GET :: USER BY USERNAME : chatapplicationgroup2/API.php?api_name=get_user&username=username
 ```
 
 ```http
-GET :: ALL USERS chatPrototype/API.php?api_name=get_user&username=--all
+GET :: ALL USERS chatapplicationgroup2/API.php?api_name=get_user&username=*
 ```
 
 ##### USING POST YOU CAN CHANGE USER THEME
 ```http
-POST :: CHANGE USERS THEME chatPrototype/API.php?api_name=change_theme&username=danielerat&theme=1
+POST :: CHANGE USERS THEME chatapplicationgroup2/API.php?api_name=change_theme&username=blaise&theme=1
 ```
 
 
@@ -73,4 +73,3 @@ The `status` attribute describes if the transaction was successful or not.
 | 404 | `NOT FOUND` |
 | 500 | `INTERNAL SERVER ERROR` |
 
-https://www.postman.com/danielerat/workspace/chatapplicationurapi/collection/17257182-7fadd075-5f3f-4f10-befe-f70569b48da5
