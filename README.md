@@ -1,5 +1,5 @@
 # Introduction
-
+Chat application (Instant messaging system: this is school projects we developed in Year 3 to apply Human centered design skills in designing interactive and attractive user interfaces)
 This phpChatApp Has an API which was built from the ground-up with a JSON API that makes it easy for developers and sysadmins To consume Provided Data .
 
 
